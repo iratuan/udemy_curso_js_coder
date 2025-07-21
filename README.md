@@ -26,3 +26,13 @@ Neste repositório, você encontrará exemplos práticos sobre:
 ## Como Navegar
 
 Os arquivos estão organizados em pastas que correspondem às seções e aulas do curso. Cada arquivo `.js` contém exemplos e exercícios específicos sobre um determinado tópico, com comentários para facilitar o entendimento.
+
+## Índice de Arquivos
+
+Abaixo está um índice dos principais arquivos de código neste repositório.
+
+### Funções
+- `funcao_basico_1.js`: Demonstração de conceitos como *function expressions*, *higher-order functions* e a introdução ao *currying*.
+- `funcao_basico_2.js`: Um tutorial prático sobre a sintaxe e os casos de uso das *Arrow Functions*.
+- `exercicios_basico_1.js`: Exercícios práticos focados na aplicação do padrão *currying*.
+- `callback_01.js`: Introdução ao padrão Callback, com exemplos de uso síncrono e assíncrono (`setInterval`).
