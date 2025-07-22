@@ -45,7 +45,7 @@ Os arquivos estão organizados em pastas que correspondem às seções e aulas d
 
 ## Índice de Arquivos
 
-Abaixo está um índice dos tutoriais e exercícios, organizados na ordem em que foram criados.
+Abaixo está um índice dos tutoriais e exercícios, organizados na ordem em que foram criados. Clique nos links para navegar diretamente para o código.
 
 1.  `funcao_basico_1.js`: Demonstração de conceitos como *function expressions*, *higher-order functions* e a introdução ao *currying*.
 2.  `funcao_basico_2.js`: Um tutorial prático sobre a sintaxe e os casos de uso das *Arrow Functions*.
