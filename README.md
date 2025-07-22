@@ -37,3 +37,4 @@ Abaixo está um índice dos principais arquivos de código neste repositório.
 - `exercicios_basico_1.js`: Exercícios práticos focados na aplicação do padrão *currying*.
 - `callback_01.js`: Introdução ao padrão Callback, com exemplos de uso síncrono e assíncrono (`setInterval`).
 - `callback_02.js`: Exemplo prático de callback para operações assíncronas de I/O (leitura de arquivos com `fs`).
+- `funcao_map_01.js`: Tutorial sobre o método `.map()` para transformar arrays, com exemplos de números e objetos.
