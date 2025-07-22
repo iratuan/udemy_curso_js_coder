@@ -84,6 +84,6 @@ function potencia2forma(base){
 // Exemplo de uso do currying:
 // 1. `potencia2forma(2)` é chamada e retorna uma nova função: `function(expo) { return Math.pow(2, expo) }`
 // 2. A função retornada é imediatamente chamada com o argumento `16`.
-const bits16 = potencia2forma(2)(3)
+const bits16 = potencia2forma(2)(16)
 
 console.log(bits16) // Exibe 65536
