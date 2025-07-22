@@ -67,3 +67,4 @@ Abaixo está um índice dos tutoriais e exercícios, organizados na ordem em que
 8. `funcao_reduce_01.js`: Tutorial sobre o método `.reduce()` para "reduzir" um array a um único valor, com exemplos e otimizações.
 9. `desafio_map_filter_reducer.js`: Resolução de um desafio prático para calcular a média de preço de itens, combinando `filter`, `map` e `reduce`.
 10. `promisse_01.js`: Introdução ao conceito de `Promise` para lidar com operações assíncronas, demonstrando a criação e o encadeamento com `.then()`.
+11. `promisse_02.js`: Demonstração do "Callback Hell" e como as Promises o resolvem, tornando o código assíncrono mais legível e gerenciável.
