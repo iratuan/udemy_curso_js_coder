@@ -44,7 +44,6 @@ console.log('Array triplicado:', triplo) // Exibe: [ 3, 6, 9, 12, 15 ]
 // Este é um dos usos mais comuns do `.map()`: extrair informações
 // ou criar uma nova estrutura a partir de um array de objetos.
 const carrinho = [
-    // Corrigindo a quantidade para um valor mais realista.
     {nome: 'Caneta', preco: 7.99, quantidade: 10},
     {nome: 'Impressora', preco: 649.50, quantidade: 1},
     {nome: 'Caderno', preco: 34.90, quantidade: 3},
