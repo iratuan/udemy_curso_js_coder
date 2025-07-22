@@ -10,6 +10,21 @@ O curso foca em aprofundar os conhecimentos em JavaScript, explorando os paradig
 
 - **Link para o curso:** [JavaScript Funcional e Reativo na Udemy](https://www.udemy.com/course/javascript-funcional)
 
+## Aluno
+
+- **Nome:** Iratuã Júnior
+- **LinkedIn:** `[Seu Perfil no LinkedIn]`
+- **GitHub:** `[Seu Perfil no GitHub]`
+
+## Tecnologias e Conceitos
+
+!JavaScript
+!Node.js
+!ES6+
+!Functional
+!Reactive
+
+
 ## Tópicos Abordados (em andamento)
 
 Neste repositório, você encontrará exemplos práticos sobre:
