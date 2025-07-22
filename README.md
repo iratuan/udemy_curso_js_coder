@@ -38,3 +38,4 @@ Abaixo está um índice dos principais arquivos de código neste repositório.
 - `callback_01.js`: Introdução ao padrão Callback, com exemplos de uso síncrono e assíncrono (`setInterval`).
 - `callback_02.js`: Exemplo prático de callback para operações assíncronas de I/O (leitura de arquivos com `fs`).
 - `funcao_map_01.js`: Tutorial sobre o método `.map()` para transformar arrays, com exemplos de números e objetos.
+- `funcao_map_01.js`: Tutorial sobre o método `.map()` para transformar arrays, com exemplos de números, objetos e uma implementação customizada.

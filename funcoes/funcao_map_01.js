@@ -66,5 +66,31 @@ console.log('Nomes dos produtos:', nomes)
 const totaisPorItem = carrinho.map(item => (item.preco * item.quantidade).toFixed(2))
 console.log('Total por item (R$):', totaisPorItem)
 
+// --- Exemplo 4: Criando nosso próprio .map() (para fins de estudo) ---
+// Para entender de verdade como o `.map()` funciona, vamos criar nossa própria versão!
+// Adicionamos nossa função ao `Array.prototype` para que todos os arrays possam usá-la.
+/**
+ * Uma implementação customizada do método .map() para fins didáticos.
+ * @param {Function} fn A função de callback que transforma cada elemento.
+ * @returns {Array} Um novo array com os elementos transformados.
+ */
+Array.prototype.meuMapa = function(fn){
+    // 1. Cria um novo array vazio para armazenar os resultados.
+    const mapped = []
+  
+    // 2. Itera sobre cada elemento do array original (referenciado por 'this').
+    for(let i = 0; i < this.length; i++){
+        // 3. Chama a função de callback (fn) para cada elemento,
+        //    passando o elemento, o índice e o array completo, assim como o .map() original.
+        const result = fn(this[i], i, this)
+        // 4. Adiciona o resultado da transformação ao novo array.
+        mapped.push(result)
+    }
 
+    // 5. Retorna o novo array transformado, sem modificar o original.
+    return mapped
+}
 
+// Testando nossa implementação customizada com o mesmo caso de uso anterior.
+const totaisComMeuMapa = carrinho.meuMapa((item) => (item.preco * item.quantidade).toFixed(2))
+console.log('Total com meuMapa (R$):', totaisComMeuMapa)
