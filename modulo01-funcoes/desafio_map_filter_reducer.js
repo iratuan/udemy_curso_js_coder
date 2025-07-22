@@ -1,7 +1,7 @@
 /**
- * @fileoverview Desafio: Combinando Map, Filter e Reduce.
- * Este arquivo analisa uma implementação do desafio e, em seguida, apresenta
- * uma solução mais alinhada com os princípios da programação funcional.
+ * @fileoverview Desafio: Combinando Filter, Map e Reduce.
+ * O objetivo é calcular a média de preço dos produtos frágeis.
+ * Vamos analisar duas abordagens funcionais para resolver este problema.
  */
 
 const carrinho = [
@@ -12,45 +12,45 @@ const carrinho = [
     {nome: 'Tesoura', preco: 19.20, quantidade: 1, fragil: true}
 ]
 
-// --- Análise da Implementação Original ---
+// --- Abordagem 1: Reduzindo para um objeto agregado ---
+// Esta abordagem filtra os itens e depois usa o .reduce() para
+// construir um objeto que contém a soma das quantidades e o valor total.
 
-// PROBLEMA 1: Mutação de dados.
-// O código abaixo modifica o array original, o que é um anti-padrão na programação funcional.
-// O ideal é sempre criar novos dados a partir dos originais (imutabilidade).
-// A lógica `!item.fragil ? item.fragil = true : item.fragil = false` é uma forma complexa
-// de inverter um booleano. Uma forma mais simples seria `item.fragil = !item.fragil`.
-const carrinhoMutado = carrinho.map(item => {
-    // Cria um NOVO objeto para não modificar o original.
-    return { ...item, fragil: !item.fragil };
-});
-// console.log(carrinhoMutado);
+const produtosFrageis = carrinho.filter(item => item.fragil)
 
-// PROBLEMA 2: Ineficiência e Clareza.
-// O código abaixo itera sobre o array duas vezes (uma para cada .reduce) para
-// calcular a soma total das quantidades e dos preços. Isso pode ser feito de
-// forma mais eficiente em uma única passagem.
-const somarQuantiadade = (acc, item) => acc + item.quantidade;
-const quantidade = carrinho.reduce(somarQuantiadade, 0);
-const somarPreco = (acc, item) => acc + item.preco;
-const preco = carrinho.reduce(somarPreco, 0);
+// A implementação original mutava o acumulador (acc.quantidade += ...).
+// Uma abordagem funcional pura retorna um NOVO objeto a cada iteração, garantindo a imutabilidade.
+const totaisAgregados = produtosFrageis.reduce((acc, item) => {
+    return {
+        quantidade: acc.quantidade + item.quantidade,
+        total: acc.total + (item.preco * item.quantidade)
+    }
+}, {quantidade: 0, total: 0})
 
-// O cálculo da "média" é ambíguo. Ele representa o preço total dividido pela
-// quantidade total de itens, não a média de preço por produto.
-const media = (preco / quantidade).toFixed(2);
-console.log(`Média de preço por unidade de item no carrinho: R$${media}`);
+const media1 = totaisAgregados.total / totaisAgregados.quantidade
+console.log(`Média (Abordagem 1): R$${media1.toFixed(2)}`)
 
-console.log('--------------------------------');
+console.log('--------------------------------')
 
-// --- Solução Funcional para o Desafio Padrão ---
-// O desafio clássico é: "Calcular o valor total de todos os itens frágeis".
+// --- Abordagem 2: Composição de Funções (Filter -> Map -> Reduce) ---
+// Esta é uma abordagem mais declarativa e elegante.
+// 1. Filtra os itens frágeis.
+// 2. Mapeia cada item para o seu valor total (preço * quantidade).
+// 3. Reduz o array de totais para um objeto que calcula a média dinamicamente.
+const getTotal = item => item.quantidade * item.preco
+const getMedia = (acc, el) => {
+    const novaQuantidade = acc.quantidade + 1
+    const novoTotal = acc.total + el
+    return {
+        quantidade: novaQuantidade,
+        total: novoTotal,
+        media: novoTotal / novaQuantidade
+    }
+}
 
-const isFragil = item => item.fragil;
-const getTotal = item => item.quantidade * item.preco;
-const somar = (acc, el) => acc + el;
+const resultadoFinal = carrinho
+    .filter(item => item.fragil)      // Filtra
+    .map(getTotal)                    // Mapeia para os totais
+    .reduce(getMedia, {quantidade: 0, total: 0, media: 0}) // Reduz para o resultado final
 
-const totalItensFrageis = carrinho
-    .filter(isFragil)
-    .map(getTotal)
-    .reduce(somar, 0);
-
-console.log(`O valor total dos itens frágeis é: R$${totalItensFrageis.toFixed(2)}`);
+console.log(`Média (Abordagem 2): R$${resultadoFinal.media.toFixed(2)}`)

@@ -45,7 +45,7 @@ Os arquivos estão organizados em pastas que correspondem às seções e aulas d
 
 ## Índice de Arquivos
 
-Abaixo está um índice dos tutoriais e exercícios, organizados na ordem em que foram criados. Clique nos links para navegar diretamente para o código.
+Abaixo está um índice dos tutoriais e exercícios, organizados na ordem em que foram criados. Clique nos links para navegar diretamente para o código correspondente na pasta `modulo01-funcoes`.
 
 1.  `funcao_basico_1.js`: Demonstração de conceitos como *function expressions*, *higher-order functions* e a introdução ao *currying*.
 2.  `funcao_basico_2.js`: Um tutorial prático sobre a sintaxe e os casos de uso das *Arrow Functions*.
@@ -53,6 +53,6 @@ Abaixo está um índice dos tutoriais e exercícios, organizados na ordem em que
 4.  `callback_01.js`: Introdução ao padrão Callback, com exemplos de uso síncrono e assíncrono (`setInterval`).
 5.  `callback_02.js`: Exemplo prático de callback para operações assíncronas de I/O (leitura de arquivos com `fs`).
 6.  `funcao_map_01.js`: Tutorial sobre o método `.map()` para transformar arrays, com exemplos de números, objetos e uma implementação customizada.
-7.  `filter_01.js`: Tutorial sobre o método `.filter()` para selecionar elementos de um array, com exemplos e uma implementação customizada.
+7.  `funcao_filter_01.js`: Tutorial sobre o método `.filter()` para selecionar elementos de um array, com exemplos e uma implementação customizada.
 8.  `funcao_reduce_01.js`: Tutorial sobre o método `.reduce()` para "reduzir" um array a um único valor, com exemplos e otimizações.
-9.  `desafio_map_filter_reducer.js`: Resolução de um desafio prático combinando `map`, `filter` e `reduce`, com análise de código e refatoração.
+9.  `desafio_map_filter_reducer.js`: Resolução de um desafio prático para calcular a média de preço de itens, combinando `filter`, `map` e `reduce`.
